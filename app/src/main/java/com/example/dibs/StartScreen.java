@@ -20,18 +20,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class StartScreen extends AppCompatActivity {
-    Context context = getApplicationContext();
-    RequestQueue requestQueue = Volley.newRequestQueue(context);
-    String url = getText(R.string.server_url).toString();
+    Context context;
+    RequestQueue requestQueue;
+    String url;
+    Toast loginFail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_screen);
-    }
 
-    // Toast to to signify login failed
-    Toast loginFail = Toast.makeText(context, "Wrong username or password", Toast.LENGTH_LONG);
+        // Load variables with data
+        context = getApplicationContext();
+        requestQueue = Volley.newRequestQueue(this);
+        url = getText(R.string.server_url).toString() + "/login";
+        loginFail = Toast.makeText(context, "Wrong username or password", Toast.LENGTH_LONG);
+    }
 
     // Creates the listener and handler for the login request to server.
     Response.Listener<JSONObject> loginResponseListener = new Response.Listener<JSONObject>() {
@@ -76,7 +80,6 @@ public class StartScreen extends AppCompatActivity {
             json.put("username", username);
             json.put("password", password);
         } catch (JSONException ignored) { }
-
         JsonObjectRequest request = new JsonObjectRequest(url, json, loginResponseListener, errorListener);
         requestQueue.add(request);
     }
