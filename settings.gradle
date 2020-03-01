@@ -1,0 +1,2 @@
+rootProject.name='DIBS'
+include ':app'
