@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DIBS</string>
+    <string name="members">Members</string>
+    <string name="calendar">Calendar</string>
+    <string name="bounties">Bounties</string>
+    <string name="points">Points</string>
+
 </resources>
