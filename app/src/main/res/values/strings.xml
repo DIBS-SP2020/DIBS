@@ -2,7 +2,11 @@
     <string name="app_name">DIBS</string>
     <string name="members">Members</string>
     <string name="calendar">Calendar</string>
-    <string name="bounties">Bounties</string>
+    <string name="bounties">Your Bounties</string>
     <string name="points">Points</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="name_email">Name/Email</string>
+    <string name = "family_name"></string>
 
 </resources>
