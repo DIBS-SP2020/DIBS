@@ -73,14 +73,17 @@ public class StartScreen extends AppCompatActivity {
         EditText passwordTextField = (EditText) findViewById(R.id.password);
         String username = usernameTextField.getText().toString();
         String password = passwordTextField.getText().toString();
-
         JSONObject json = new JSONObject();
+        //Remove later
+        Intent intent = new Intent(StartScreen.this, Home.class);
+        startActivity(intent);
+
         // Placed in try catch because by default, key can be empty.
-        try {
-            json.put("username", username);
-            json.put("password", password);
-        } catch (JSONException ignored) { }
-        JsonObjectRequest request = new JsonObjectRequest(url, json, loginResponseListener, errorListener);
-        requestQueue.add(request);
+//        try {
+//            json.put("username", username);
+//            json.put("password", password);
+//        } catch (JSONException ignored) { }
+//        JsonObjectRequest request = new JsonObjectRequest(url, json, loginResponseListener, errorListener);
+//        requestQueue.add(request);
     }
 }
